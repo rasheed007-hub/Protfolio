@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.header{
+    border-bottom: 1px solid;
+}
+
+.genLa{
+    max-width: 1200px;
+    margin: auto;
+}
+.toggle{
+    display: none;
+}
+
+.navItems{
+    margin-top: -4rem;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    padding: 20px 150px; 
+    z-index: 1000;
+    max-width: 100%;
+}
+
+.navItems span{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    opacity: .7;
+    font-family: "Bebas Neue", serif;
+    font-weight: 400;
+}
+
+.navList>ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-transform: capitalize;
+    font-family: "Inter", serif;
+    font-size: .9rem;
+}
+
+.navList ul li a{
+    color: white;
+    transition: .2s;
+}
+
+.navList ul li a:hover{
+    color: #7aa7e9;
+    font-size: 1rem;
+}
+
+.based- a{
+   padding: 10px 20px;
+    font-size: .9rem;
+    background-color: #7aa7e9;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: black;
+    font-family: "Manrope", serif;
+    font-weight: 900;
+}
+.based1 a{
+   padding: 10px 20px;
+    font-size: .9rem;
+    background-color: #7aa7e9;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: black;
+    font-family: "Manrope", serif;
+    font-weight: 900;
+}
+/* dropdown menu */
+.toggle_btn{
+    display: none;
+}
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(54, 60, 145, 0.178);
+    backdrop-filter: blur(30px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 150px;
+}
+
+.dropdown_menu>li>a{
+    font-family: "Manrope", serif;
+    color: #fff;
+}
+
+.dropdown_menu>li>a:hover{
+    color: #09a6ce;
+    font-weight: 600;
+    font-size: 18px;
+}
+.dropdown_menu > li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about{
+    display: flex;
+    align-items: start;
+    margin-block: 4rem;
+    justify-content: space-between;
+}
+
+.about>h1{
+    font-family: "Bebas Neue", serif;
+    font-weight: 500;
+    width: 40%;
+    font-size: 5rem;
+}
+
+.story{
+    font-family: "Manrope", serif;
+    width: 50%;
+    padding-top: 1rem;
+}
+
+.story h2{
+    font-weight: 400;
+}
+
+.story p{
+    margin-block: 2rem;
+}
+
+.links{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.links> a{
+    display: block;
+    padding-inline: 1.2rem;
+    padding-block: .7rem;
+    font-size: .8rem;
+    background-color: #09a6ce;
+    height: 2.5rem;
+    width: 12rem;
+    border-radius: 25px;
+    text-transform: uppercase;
+    color: black;
+    font-family: "Manrope", serif;
+    font-weight: 900;
+}
+
+.links> a> i{
+    margin-left: .1rem;
+}
+
+.socail> ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.socail> ul> li{
+    font-size: 1.6rem;
+    background-color: #222222;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 100%;
+    text-align: center;
+    padding-top: .4rem;
+}
+
+.socail >ul> li> a{
+    color: #09a6ce;
+}
+
+@media (max-width:1024px) {
+
+    .navItems{
+        padding: 20px 30px;
+    }
+    .about{
+        padding: 29px 30px;
+    }
+    .socail ul li{
+        font-size: 25px;
+    }
+}
+@media (max-width:800px) {
+
+    .navItems{
+        padding: 20px 30px;
+    }
+    .about{
+        padding: 29px 30px;
+    }
+    .about>h1{
+        font-size: 50px;
+    }
+    .story h2{
+        font-size: 20px;
+    }
+    .story p{
+        font-size: 14px;
+    }
+    .socail ul li{
+        font-size: 22px;
+    }
+}
+@media (max-width:500px) {
+    .navItems{
+        padding: 20px 30px;
+    }
+    .navItems span{
+        font-size: .9rem;
+    }
+    .navList{
+        display: none;
+    }
+    .based-{
+        display: none;
+    }
+    .toggle_btn{
+        display: block;
+    }
+    .dropdown_menu{
+        display: block;
+    }
+
+    .about{
+        padding: 20px 30px;
+        flex-direction: column;
+    }
+    .about>h1{
+        width: 100%;
+        font-size: 2rem;
+    }
+    .story{
+        width: 100%;
+    }
+    .story h2{
+        font-size: 18px;
+    }
+    .story p{
+        font-size: 13px;
+    }
+    .links{
+        gap: .5rem;
+    }
+    .links>a{
+        width: 200px;
+    }
+    .socail ul li{
+        font-size: 19px;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
+
+.image{
+    width: 100%;
+    background-color: #ebb789;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+}
+.image img{
+    height: 70vh;
+    width: 100%;
+    object-fit: contain;
+    border-radius: 20px;
+}
+.imag{
+    display: none;
+}
+.app9{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 0.6s ease;
+}
+.app,.app0,.app1,.app2,.app3,.app4,.app5,.app6,.app7,.app8,.app10,.app11 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s ease, transform 0.6s ease;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width:1024px){
+   .image{
+        width: 90%;;
+    }
+}
+
+@media (max-width:500px){
+   .image{
+        display: none;
+    }
+    .imag{
+        padding: 0px 30px;
+        display: block;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+    .imag img{
+        height: 40%;
+        width: 100%;
+        border-radius: 10px;
+    }
+ 
+}
+#capble{
+    border-block: 1px solid;
+}
+
+.capble {
+    display: flex;
+    margin-block: 4rem;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.one{
+    text-transform: capitalize;
+    font-family: "Bebas Neue", serif;
+    width: 40%;
+}
+
+.one h1{
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.two{
+    width: 50%;
+    font-family: "Manrope", serif;
+    padding-top: 1rem;
+    font-style: normal;
+    font-weight: lighter;
+}
+
+.two p{
+    margin-bottom: 2rem;
+}
+
+.skills{
+    text-transform: capitalize;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    font-weight: 500;
+    gap: 1rem;
+}
+
+.box{
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+@media (max-width:1024px){
+
+    .capble{
+        padding: 0px 30px;
+    }
+    .one h1{
+        font-size: 50px;
+    }
+    .two p{
+        font-size: 15px;
+    }
+    .skills{
+        grid-template-columns: 1fr 1fr;
+    }
+    .box{
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width:800px){
+
+    .capble{
+        padding: 0px 30px;
+    }
+    .one h1{
+        font-size: 40px;
+    }
+    .two p{
+        font-size: 14px;
+    }
+    .skills{
+        grid-template-columns: 1fr 1fr ;
+    }
+    .box{
+        padding: 10px 10px;
+    }
+}
+@media (max-width:500px){
+
+    .capble{
+        padding: 0px 30px;
+        flex-direction: column;
+    }
+    .one{
+        width: 100%;
+    }
+    .one h1{
+        font-size: 2rem;
+    }
+    .two{
+        width: 100%;
+    }
+    .two p{
+        font-size: 14px;
+    }
+    .skills{
+        grid-template-columns: 1fr 1fr ;
+    }
+    .box{
+        padding: 10px 10px;
+        font-size: 13x;
+    }
+}
+
+.contact{
+    display: flex;
+    font-family: "Manrope", serif;
+    margin-block: 4rem;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.contactText{
+    width: 50%;
+}
+
+.contactText h2{
+    font-family: "Bebas Neue", serif;
+    font-weight: 500;
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+
+.contactText p{
+    font-size: .9rem;
+    font-size: 300;
+}
+
+.contactText a {
+    color: white;
+}
+
+.soc ul{
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.soc ul li a{
+    font-size: 1.6rem;
+    color: #7aa7e9;
+}
+
+.form{
+    width: 50%;
+    text-transform: capitalize;
+}
+
+
+.input{
+    display: flex;
+    flex-direction: column;
+    padding: 9px 0px;
+}
+.input label{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: .2rem;
+}
+
+.input input{
+    background-color: #222222;
+    padding: 10px 20px;
+    width: 100%;
+    height: 30px;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+textarea{
+    background-color: #222222;
+    padding: 10px 20px;
+    color: white;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 100px;
+    font-size: 16px;
+}
+
+form>button{
+    margin-top: 1rem;
+    font-family: "Manrope", serif;
+    font-weight: 500;
+    background-color: #7aa7e9;
+    height: 2.5rem;
+    width: 7rem;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+footer{
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    font-family: "Manrope", serif;
+    font-size: .8rem;
+}
+@media (max-width: 1024px){
+    .contact{
+        padding: 10px 30px;
+    }
+    .contactText h2{
+        font-size: 50px;
+    }
+    .contactText p{
+        font-size: 15px;
+    } 
+    .soc ul li a{
+        font-size: 25px;
+    }
+    .input{
+        padding: 5px 0px;
+    }
+    .input label{
+        font-size: .9rem;
+        font-weight: 500;
+        margin-bottom: .2rem;
+    }
+    footer{
+        padding-left: 15px;
+        margin-top: -6rem;
+    }
+    
+}
+
+@media (max-width: 800px){
+    .contactText h2{
+        font-size: 40px;
+    }
+    .contactText p{
+        font-size: 14px;
+    } 
+    .soc ul li a{
+        font-size: 22px;
+    }
+    .input label{
+        font-size: .8rem;
+    }
+    footer{
+        font-size: 13px;
+    }
+    
+}
+@media (max-width: 500px){
+    .contact{
+        flex-direction: column;
+    }
+    .contactText{
+        width: 100%;
+    }
+    .form{
+        margin-top: 4rem;
+        width: 100%;
+    }
+    .contactText h1{
+        font-size: 2rem;
+    }
+    .contactText p{
+        font-size: 14px;
+    } 
+    .soc ul li a{
+        font-size: 22px;
+    }
+    .input label{
+        font-size: .8rem;
+    }
+    .input input{
+        font-size: 14px;
+    }
+    textarea{
+        font-size: 14px;
+    }
+    footer{
+        margin-top: -40px;
+        font-size: 13px;
+    }
+    
+}
